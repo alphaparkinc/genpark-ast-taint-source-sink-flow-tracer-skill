@@ -1,0 +1,39 @@
+{
+  "name": "genpark-ast-taint-source-sink-flow-tracer-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Static AST dataflow tracer following untrusted user sources to sensitive sinks detecting SQLi, XSS, and command injection.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "service",
+  "tags": [
+    "static-analysis",
+    "taint-analysis",
+    "ast-tracer",
+    "code-review",
+    "vulnerability-audit"
+  ],
+  "inputs": {
+    "file_path": {
+      "type": "string"
+    },
+    "source_symbol": {
+      "type": "string"
+    },
+    "sink_symbol": {
+      "type": "string"
+    }
+  },
+  "outputs": {
+    "trace_id": {
+      "type": "string"
+    },
+    "is_vulnerable_unmitigated_flow": {
+      "type": "boolean"
+    },
+    "security_risk_level": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
